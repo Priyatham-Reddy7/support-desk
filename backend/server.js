@@ -15,13 +15,14 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: false}))
 
 app.get('/', (req, res) => {
-    res.status(200).json({message: 'Welcome to be Support desk API'})
+    res.status(200).json({message: 'Welcome to the Support desk API'})
 })
 
 
 
 //Routes
 app.use('/api/users', require('./routes/userRoutes'))
+app.use('/api/tickets', require('./routes/ticketRoutes'))
 
 //errorHandler
 app.use(errorHandler)
